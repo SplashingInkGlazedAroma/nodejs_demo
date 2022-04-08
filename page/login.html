@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!--解决favicon.ico404问题-->
+    <link href="favicon.ico" rel="shortcut icon">
+    <script src="../public/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function (){
+            $("#loginBtn").on('click',function (){
+              $("#form").submit()
+            })
+        })
+    </script>
+    <title>用户登录</title>
+</head>
+<body>
+    <form id="form"  action="http://localhost:9462/api/login" method="post">
+      <label>
+        用户名:<input type="text" name="username"/><br/>
+        密码：<input type="password" name="password"/><br/>
+      </label>
+      <button id="loginBtn">登录</button>
+    </form>
+</body>
+</html>

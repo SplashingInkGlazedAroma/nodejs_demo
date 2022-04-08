@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="content">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="提交">
+        </label>
+        <ul>
+            <% for(let i=0;i<posts.length;i++){%>
+            <li><%=posts[i]%></li>
+            <%}%>
+        </ul>
+    </form>
+</body>
+</html>

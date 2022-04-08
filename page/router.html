@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../public/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function (){
+            $('#GetBtn').click(function (){
+                $.ajax({
+                    type:'GET',
+                    url:'http://127.0.0.1:8744/api/get',
+                    data:{
+                        name:'袁天罡',
+                        age:152,
+                        sex:'男'
+                    },
+                    success:function (res){
+                        console.log(res)
+                    }
+                })
+            })
+
+            $('#PostBtn').click(function (){
+                $.ajax({
+                    type:'POST',
+                    url:'http://localhost:8744/api/post',
+                    data:{
+                        name:'李淳风',
+                        age:95,
+                        sex:'男'
+                    },
+                    success:function (res){
+                        console.log(res)
+                    }
+                })
+            })
+
+            $('#DeleteBtn').on('click',function (){
+                $.ajax({
+                    type:'DELETE',
+                    url:'http://localhost:8744/api/delete',
+                    success:function (res){
+                        console.log(res)
+                    }
+                })
+            })
+
+            $('#JsonPBtn').on('click',function (){
+                $.ajax({
+                    type:'GET',
+                    url:'http://localhost:8744/api/jsonp',
+                    dataType:'jsonp',  //仅支持get请求
+                    success:function (res){
+                        console.log(res)
+                    }
+                })
+            })
+        })
+    </script>
+    <title>解决跨域问题</title>
+</head>
+<body>
+  <button id="GetBtn">GET</button>
+  <button id="PostBtn">Post</button>
+  <button id="DeleteBtn">Delete</button>
+  <button id="JsonPBtn">JsonP</button>
+</body>
+</html>
